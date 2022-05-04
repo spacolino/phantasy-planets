@@ -57,37 +57,37 @@ function App() {
   const mint = async () => {
       
     try {        
-      if(file != null)
+      // if(file != null)
       {
-        const file1 = new Moralis.File(file.name, file);
-        await file1.saveIPFS();
-        const file1url = file1.url;
+        // const file1 = new Moralis.File(file.name, file);
+        // await file1.saveIPFS();
+        // const file1url = file1.url;
 
-        const metadata = {
-          name,
-          description,
-          image: file1url
-        };
+        // const metadata = {
+        //   name,
+        //   description,
+        //   image: file1url
+        // };
 
-        const jsonMetadata = JSON.stringify(metadata);
-        const buffer = Buffer.Buffer.from(jsonMetadata).toString("base64");
+        // const jsonMetadata = JSON.stringify(metadata);
+        // const buffer = Buffer.Buffer.from(jsonMetadata).toString("base64");
         
 
-        const file2 = new Moralis.File(`${name}metadata.json`, {
-          base64: buffer,
-        });
+        // const file2 = new Moralis.File(`${name}metadata.json`, {
+        //   base64: buffer,
+        // });
 
-        await file2.saveIPFS();
-        const metadataurl = file2.ipfs();//.url;              
+        // await file2.saveIPFS();
+        // const metadataurl = file2.ipfs();//.url;              
         
-        let abc = metadataurl.url;
+        // let abc = metadataurl.url;
 
         let lib = Moralis.web3Library;
         const prov = new lib.providers.Web3Provider(Moralis.provider);
         const signer = prov.getSigner();
         const web33 = new lib.Contract(contractAddress, contractABI, signer);
         
-        const ctr = await web33.safeMint(metadataurl);
+        const ctr = await web33.mint(1);
 
         await ctr.wait();
 
@@ -119,8 +119,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />        
-        <button onClick={login}>Moralis Metamask Login</button>
-        <button onClick={logOut} disabled={isAuthenticating}>Logout</button>
+        <button onClick={login}>Connect Wallet</button>
+        <button onClick={logOut} disabled={isAuthenticating}>Disconnect</button>
         <p/>
         <input type='text' value={name} placeholder="Name" onChange={(e) => setName(e.target.value)} />
         <input type="text" value={description} placeholder="Description" onChange={(e) => setDescription(e.target.value)} />
