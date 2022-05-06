@@ -16,11 +16,18 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
-  solidity: "0.8.4",
+  solidity: "0.8.9",
   networks: {
+    hardhat: {
+      chainId: 1337
+    },
+    ropsten: {
+      url: `https://speedy-nodes-nyc.moralis.io/75de1ad087cf3e2eed4fd036/eth/ropsten`,
+      accounts: [`40064369e6f8ac0f609bc79a60bc3cc6bccb4624bf554c0f71babe537182477f`]
+    },
     rinkeby: {
       url: `https://speedy-nodes-nyc.moralis.io/75de1ad087cf3e2eed4fd036/eth/rinkeby`,
-      accounts: [`4b83f4f6b1c90ed9fc425129358a7327dd4877e5136df1a7aae65f355b192378`]
+      accounts: [`40064369e6f8ac0f609bc79a60bc3cc6bccb4624bf554c0f71babe537182477f`]
     }
   }
 };

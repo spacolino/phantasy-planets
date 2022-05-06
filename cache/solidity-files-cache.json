@@ -1,12 +1,12 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/home/spaco/development/crypto-planets/contracts/Planets.sol": {
-      "lastModificationDate": 1651689118076,
-      "contentHash": "27a7d9288423af96a7c2c2eb20cacc7e",
-      "sourceName": "contracts/Planets.sol",
+    "/home/spaco/development/crypto-planets/contracts/PlanetsContract.sol": {
+      "lastModificationDate": 1651826359296,
+      "contentHash": "cc8922ae3f9877f6334a72315586fb4f",
+      "sourceName": "contracts/PlanetsContract.sol",
       "solcConfig": {
-        "version": "0.8.4",
+        "version": "0.8.9",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -32,21 +32,23 @@
         "erc721a/contracts/ERC721A.sol",
         "@openzeppelin/contracts/access/Ownable.sol",
         "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol",
-        "@openzeppelin/contracts/security/ReentrancyGuard.sol"
+        "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+        "hardhat/console.sol",
+        "@openzeppelin/contracts/utils/math/SafeMath.sol"
       ],
       "versionPragmas": [
-        "^0.8.4"
+        "^0.8.9"
       ],
       "artifacts": [
         "PlanetsContract"
       ]
     },
     "/home/spaco/development/crypto-planets/node_modules/erc721a/contracts/ERC721A.sol": {
-      "lastModificationDate": 1651679436676,
+      "lastModificationDate": 1651730551643,
       "contentHash": "196937797eec2db79da2d23907031821",
       "sourceName": "erc721a/contracts/ERC721A.sol",
       "solcConfig": {
-        "version": "0.8.4",
+        "version": "0.8.9",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -85,11 +87,11 @@
       ]
     },
     "/home/spaco/development/crypto-planets/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
-      "lastModificationDate": 1649684712875,
+      "lastModificationDate": 1650965596923,
       "contentHash": "8398972af73b4e9e5ff3b31cad86234f",
       "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
       "solcConfig": {
-        "version": "0.8.4",
+        "version": "0.8.9",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -122,11 +124,11 @@
       ]
     },
     "/home/spaco/development/crypto-planets/node_modules/@openzeppelin/contracts/utils/cryptography/MerkleProof.sol": {
-      "lastModificationDate": 1649684712875,
+      "lastModificationDate": 1650965597202,
       "contentHash": "b919f5fbfe0ab75cc71f2d361eac7f4b",
       "sourceName": "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol",
       "solcConfig": {
-        "version": "0.8.4",
+        "version": "0.8.9",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -157,11 +159,11 @@
       ]
     },
     "/home/spaco/development/crypto-planets/node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol": {
-      "lastModificationDate": 1649684712885,
+      "lastModificationDate": 1650965597124,
       "contentHash": "92f9448b23a90ea3bb932ee55cc3ccce",
       "sourceName": "@openzeppelin/contracts/security/ReentrancyGuard.sol",
       "solcConfig": {
-        "version": "0.8.4",
+        "version": "0.8.9",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -191,12 +193,82 @@
         "ReentrancyGuard"
       ]
     },
+    "/home/spaco/development/crypto-planets/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1650965625606,
+      "contentHash": "cc4777addd464ea56fa35b1c45df0591",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "/home/spaco/development/crypto-planets/node_modules/@openzeppelin/contracts/utils/math/SafeMath.sol": {
+      "lastModificationDate": 1650965597221,
+      "contentHash": "a6a9d6c1f662e922b82c1ba4d81cdd48",
+      "sourceName": "@openzeppelin/contracts/utils/math/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
     "/home/spaco/development/crypto-planets/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
-      "lastModificationDate": 1649684712875,
+      "lastModificationDate": 1650965597160,
       "contentHash": "27d219ec6f69478d065fdbfa7931da68",
       "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
       "solcConfig": {
-        "version": "0.8.4",
+        "version": "0.8.9",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -229,11 +301,11 @@
       ]
     },
     "/home/spaco/development/crypto-planets/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
-      "lastModificationDate": 1649684712875,
+      "lastModificationDate": 1650965597161,
       "contentHash": "592df588492d45fdcf46b3cb608c0fbf",
       "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
       "solcConfig": {
-        "version": "0.8.4",
+        "version": "0.8.9",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -264,11 +336,11 @@
       ]
     },
     "/home/spaco/development/crypto-planets/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
-      "lastModificationDate": 1649684712875,
+      "lastModificationDate": 1650965597171,
       "contentHash": "efbc0d15b80a74e34dbe8da0f3e879bb",
       "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
       "solcConfig": {
-        "version": "0.8.4",
+        "version": "0.8.9",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -301,11 +373,11 @@
       ]
     },
     "/home/spaco/development/crypto-planets/node_modules/@openzeppelin/contracts/utils/Address.sol": {
-      "lastModificationDate": 1649684712855,
+      "lastModificationDate": 1650965597186,
       "contentHash": "ad714a6368ee7d43cded6bbe8af0b155",
       "sourceName": "@openzeppelin/contracts/utils/Address.sol",
       "solcConfig": {
-        "version": "0.8.4",
+        "version": "0.8.9",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -336,11 +408,11 @@
       ]
     },
     "/home/spaco/development/crypto-planets/node_modules/@openzeppelin/contracts/utils/Context.sol": {
-      "lastModificationDate": 1649684712855,
+      "lastModificationDate": 1650965597192,
       "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
       "sourceName": "@openzeppelin/contracts/utils/Context.sol",
       "solcConfig": {
-        "version": "0.8.4",
+        "version": "0.8.9",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -371,11 +443,11 @@
       ]
     },
     "/home/spaco/development/crypto-planets/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
-      "lastModificationDate": 1649684712885,
+      "lastModificationDate": 1650965597197,
       "contentHash": "9c54c6c065d9e590fdcdd72c451425b9",
       "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
       "solcConfig": {
-        "version": "0.8.4",
+        "version": "0.8.9",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -406,11 +478,11 @@
       ]
     },
     "/home/spaco/development/crypto-planets/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
-      "lastModificationDate": 1649684712865,
+      "lastModificationDate": 1650965597209,
       "contentHash": "0e7db055ce108f9da7bb6686a00287c0",
       "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
       "solcConfig": {
-        "version": "0.8.4",
+        "version": "0.8.9",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -443,11 +515,11 @@
       ]
     },
     "/home/spaco/development/crypto-planets/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
-      "lastModificationDate": 1649684712875,
+      "lastModificationDate": 1650965597214,
       "contentHash": "03e6768535ac4da0e9756f1d8a4a018a",
       "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
       "solcConfig": {
-        "version": "0.8.4",
+        "version": "0.8.9",
         "settings": {
           "optimizer": {
             "enabled": false,

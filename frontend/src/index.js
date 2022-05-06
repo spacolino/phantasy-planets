@@ -6,8 +6,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { MoralisProvider } from "react-moralis";
 
-const serverURL = "https://rhpvmb8wflbb.usemoralis.com:2053/server";
-const appID = "19hlAwhbmDvTRXjNEzkU9TePw7jDFKPfOusRul0p";
+const serverURL = "https://ynedv7rj3iqe.usemoralis.com:2053/server";
+const appID = "EPIKNAig8TBAoOU87gJzJl95lRlx7OW3qaNgkVdm";
 
 const container = document.getElementById('root');
 const root = createRoot(container);

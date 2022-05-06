@@ -5,7 +5,8 @@ import { useMoralisWeb3Api } from "react-moralis";
 import { useEffect, useState } from 'react';
 import Moralis from 'moralis';
 import { contractABI, contractAddress } from "./contract/contract";
-import Buffer from 'buffer';
+// import Buffer from 'buffer';
+import { ethers } from 'ethers';
 // import Web3 from 'web3';
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
     else
     {
       const options = {          
-        address: "0x7D94E89E279fFEE36348446753F4cC713dE9ccDb"
+        address: "0x2cb4F25E9b4218920bFe8D39251269a0b96dE3b8"
       };
       const NFTs = Web3Api.account.getNFTs(options)
       .then(function(nfts) {
@@ -85,11 +86,9 @@ function App() {
         let lib = Moralis.web3Library;
         const prov = new lib.providers.Web3Provider(Moralis.provider);
         const signer = prov.getSigner();
-        const web33 = new lib.Contract(contractAddress, contractABI, signer);
-        
-        const ctr = await web33.mint(1);
-
-        await ctr.wait();
+        const web3 = new lib.Contract(contractAddress, contractABI, signer);        
+        const _contract = await web3.mint(1, {value: ethers.utils.parseEther("0.005")});
+        await _contract.wait();
 
         // const contract = new web3.eth.Contract(contractABI, contractAddress);
         // const response = await contract.methods

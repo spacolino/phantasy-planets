@@ -1,7 +1,7 @@
 async function main() {
     // We get the contract to deploy
     const Planets = await ethers.getContractFactory("PlanetsContract");
-    const planets = await Planets.deploy("Planets","Pnt",800000000000000,1000,3,"ipfs://QmbytEjcqZpYzkNefqxwwx49RtxAN5RJEH4vSX6KorMXxC/hidden.json");
+    const planets = await Planets.deploy("Planets","Pnt",5000000000000000,1000,3,"ipfs://QmbytEjcqZpYzkNefqxwwx49RtxAN5RJEH4vSX6KorMXxC/hidden.json");
   
     await planets.deployed();
   
