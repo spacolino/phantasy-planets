@@ -1,4 +1,4 @@
-export const contractAddress = "0xa7b92c47951d9f19e55cF92c6cA1488f6572f6a4";
+export const contractAddress = "0xD66FE059C957b6d4946218Ee340eE2Dabfc035E1";
 export const contractABI = [
   {
     "inputs": [
@@ -29,7 +29,7 @@ export const contractABI = [
       },
       {
         "internalType": "string",
-        "name": "_hiddenMetadataUri",
+        "name": "_uriPrefix",
         "type": "string"
       }
     ],

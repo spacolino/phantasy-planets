@@ -87,7 +87,7 @@ function App() {
         const prov = new lib.providers.Web3Provider(Moralis.provider);
         const signer = prov.getSigner();
         const web3 = new lib.Contract(contractAddress, contractABI, signer);        
-        const _contract = await web3.mint(1, {value: ethers.utils.parseEther("0.005")});
+        const _contract = await web3.mint(3, {value: ethers.utils.parseEther("0.015")});
         await _contract.wait();
 
         // const contract = new web3.eth.Contract(contractABI, contractAddress);
@@ -133,7 +133,7 @@ function App() {
         } 
         />
         <p/>
-        <button onClick={mint}>Mint</button>
+        <button onClick={mint}>Mint</button>        
       </header>
     </div>
   );

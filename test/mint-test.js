@@ -13,7 +13,7 @@ describe(" ----------- PLANETS CONTRACT MINTING TEST --------------- ", function
                             ,5000000000000000
                             ,1000
                             ,3
-                            ,"ipfs://QmbytEjcqZpYzkNefqxwwx49RtxAN5RJEH4vSX6KorMXxC/hidden.json");    
+                            ,"ipfs://QmNqqZycFCsGKTwgW8Vaf2K7umB3wznwPctbo8HyyXkGE4/");    
 
     await planets.deployed();
 
@@ -60,6 +60,8 @@ describe(" ----------- PLANETS CONTRACT MINTING TEST --------------- ", function
     console.log("Mint successfull.");
     console.log("Wallet Planets NFT token balance: %s", balanceOf);
     console.log("Minting wallet balance (wei): %s", balance);
+
+    console.log("Token URI: %s", await planets.tokenURI(1));
   });
 
   it("2 NFTs minted successfully", async function () {        
