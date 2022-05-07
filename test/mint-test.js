@@ -10,10 +10,11 @@ describe(" ----------- PLANETS CONTRACT MINTING TEST --------------- ", function
 
     const Planets = await ethers.getContractFactory("PlanetsContract");
     planets = await Planets.deploy("Planets","Pnt"
-                            ,5000000000000000
+                            ,100000000000000
                             ,1000
                             ,3
-                            ,"ipfs://QmNqqZycFCsGKTwgW8Vaf2K7umB3wznwPctbo8HyyXkGE4/");    
+                            ,"ipfs://QmNqqZycFCsGKTwgW8Vaf2K7umB3wznwPctbo8HyyXkGE4/"
+                            ,"ipfs://QmZ328XoJy3WbbhaqmaCZrW2vr59a3xwJARm6zUPVRVTet/contract.json");    
 
     await planets.deployed();
 
@@ -46,9 +47,9 @@ describe(" ----------- PLANETS CONTRACT MINTING TEST --------------- ", function
     let mintQuantity = 1;
     console.log(" ");    
     console.log("Mint %s NFT token(s)", mintQuantity);
-    console.log("Mint price (wei): %s", ethers.utils.parseEther("0.005") * mintQuantity);
+    console.log("Mint price (wei): %s", ethers.utils.parseEther("0.0001") * mintQuantity);
     const txMint = await planets.connect(account1)
-                                 .mint(mintQuantity, {value: ethers.utils.parseEther("0.005")});
+                                 .mint(mintQuantity, {value: ethers.utils.parseEther("0.0001")});
     await txMint.wait();
 
     let balanceOf = await planets.balanceOf(account1.address);    
@@ -87,7 +88,7 @@ describe(" ----------- PLANETS CONTRACT MINTING TEST --------------- ", function
     console.log("Contract unpaused.");
     
     let mintQuantity = 2;
-    let mintPrice = ethers.utils.parseEther("0.01");
+    let mintPrice = ethers.utils.parseEther("0.0002");
     console.log(" ");    
     console.log("Mint %s NFT token(s)", mintQuantity);
     console.log("Mint price (wei): %s", mintPrice);
@@ -129,7 +130,7 @@ describe(" ----------- PLANETS CONTRACT MINTING TEST --------------- ", function
     console.log("Contract unpaused.");
     
     let mintQuantity = 3;
-    let mintPrice = ethers.utils.parseEther("0.015");
+    let mintPrice = ethers.utils.parseEther("0.0003");
     console.log(" ");    
     console.log("Mint %s NFT token(s)", mintQuantity);
     console.log("Mint price (wei): %s", mintPrice);

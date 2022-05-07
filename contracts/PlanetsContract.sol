@@ -18,6 +18,7 @@ contract PlanetsContract is ERC721A, Ownable, ReentrancyGuard {
     string public uriPrefix = "";
     string public uriSuffix = ".json";
     string public hiddenMetadataUri;
+    string public contractMetadataUri;
 
     uint256 public cost;
     uint256 public maxSupply;
@@ -33,14 +34,14 @@ contract PlanetsContract is ERC721A, Ownable, ReentrancyGuard {
         uint256 _cost,
         uint256 _maxSupply,
         uint256 _maxMintAmountPerTx,
-        // string memory _hiddenMetadataUri
-        string memory _uriPrefix
+        string memory _uriPrefix,
+        string memory _uriContractMetadata
     ) ERC721A(_tokenName, _tokenSymbol) {
         setCost(_cost);
         maxSupply = _maxSupply;
         setMaxMintAmountPerTx(_maxMintAmountPerTx);
-        // setHiddenMetadataUri(_hiddenMetadataUri);        
         setUriPrefix(_uriPrefix);
+        setContractURI(_uriContractMetadata);
     }
 
     modifier mintCompliance(uint256 _mintAmount) {
@@ -74,7 +75,7 @@ contract PlanetsContract is ERC721A, Ownable, ReentrancyGuard {
             MerkleProof.verify(_merkleProof, merkleRoot, leaf),
             "Invalid proof!"
         );
-        
+
         whitelistClaimed[_msgSender()] = true;
         _safeMint(_msgSender(), _mintAmount);
     }
@@ -82,10 +83,10 @@ contract PlanetsContract is ERC721A, Ownable, ReentrancyGuard {
     function mint(uint256 _mintAmount)
         public
         payable
-        mintCompliance(_mintAmount)     
-        mintPriceCompliance(_mintAmount)   
+        mintCompliance(_mintAmount)
+        mintPriceCompliance(_mintAmount)
     {
-        require(!paused, "The contract is paused!");        
+        require(!paused, "The contract is paused!");
         _safeMint(_msgSender(), _mintAmount);
     }
 
@@ -93,7 +94,7 @@ contract PlanetsContract is ERC721A, Ownable, ReentrancyGuard {
         public
         mintCompliance(_mintAmount)
         onlyOwner
-    {        
+    {
         _safeMint(_receiver, _mintAmount);
     }
 
@@ -192,6 +193,17 @@ contract PlanetsContract is ERC721A, Ownable, ReentrancyGuard {
 
     function setUriSuffix(string memory _uriSuffix) public onlyOwner {
         uriSuffix = _uriSuffix;
+    }
+
+    function contractURI() public view returns (string memory) {
+        return contractMetadataUri;
+    }
+
+    function setContractURI(string memory _uriContractMetadata)
+        public
+        onlyOwner
+    {
+        contractMetadataUri = _uriContractMetadata;
     }
 
     function setPaused(bool _state) public onlyOwner {

@@ -1,4 +1,4 @@
-export const contractAddress = "0xD66FE059C957b6d4946218Ee340eE2Dabfc035E1";
+export const contractAddress = "0xD8c87039f8f90532f8f04c29b44ecD7F30ea1575";
 export const contractABI = [
   {
     "inputs": [
@@ -30,6 +30,11 @@ export const contractABI = [
       {
         "internalType": "string",
         "name": "_uriPrefix",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_uriContractMetadata",
         "type": "string"
       }
     ],
@@ -222,6 +227,32 @@ export const contractABI = [
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "contractMetadataUri",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "contractURI",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
       }
     ],
     "stateMutability": "view",
@@ -509,6 +540,19 @@ export const contractABI = [
       }
     ],
     "name": "setApprovalForAll",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_uriContractMetadata",
+        "type": "string"
+      }
+    ],
+    "name": "setContractURI",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

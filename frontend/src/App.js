@@ -5,14 +5,11 @@ import { useMoralisWeb3Api } from "react-moralis";
 import { useEffect, useState } from 'react';
 import Moralis from 'moralis';
 import { contractABI, contractAddress } from "./contract/contract";
-// import Buffer from 'buffer';
 import { ethers } from 'ethers';
-// import Web3 from 'web3';
 
 function App() {
 
   let web3provider;
-  // const web3 = new Web3(Moralis.provider);
   const Web3Api = useMoralisWeb3Api();
   const { authenticate, isAuthenticated, isAuthenticating, user, account, logout } = useMoralis();
   const [name, setName] = useState("");
@@ -87,7 +84,7 @@ function App() {
         const prov = new lib.providers.Web3Provider(Moralis.provider);
         const signer = prov.getSigner();
         const web3 = new lib.Contract(contractAddress, contractABI, signer);        
-        const _contract = await web3.mint(3, {value: ethers.utils.parseEther("0.015")});
+        const _contract = await web3.mint(3, {value: ethers.utils.parseEther("0.0003")});
         await _contract.wait();
 
         // const contract = new web3.eth.Contract(contractABI, contractAddress);
@@ -103,7 +100,7 @@ function App() {
         // const tokenId = response.events.Transfer.returnValues.tokenId;
         
         alert(
-          `NFT successfully minted. Contract address - ${contractAddress}`
+          `3 NFTs successfully minted. Contract address - ${contractAddress}`
         );
       }
     }
