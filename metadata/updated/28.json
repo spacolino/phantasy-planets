@@ -1,0 +1,56 @@
+{
+  "description": "Kul Planets NFT collection. Completely procedurally generated planets/scenes in a combination of stylized and realistic style. Each planet is different from others.",
+  "external_url": "http://test",
+  "image": "http://test/.png",
+  "name": "KulPlanet28",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "COMMON"
+    },
+    {
+      "trait_type": "Planet Type",
+      "value": "Desert"
+    },
+    {
+      "trait_type": "Atmosphere",
+      "value": "Yes"
+    },
+    {
+      "trait_type": "Ring",
+      "value": "No"
+    },
+    {
+      "trait_type": "Clouds",
+      "value": "No"
+    },
+    {
+      "trait_type": "Civilization",
+      "value": "No"
+    },
+    {
+      "trait_type": "Nebulas",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Milky Way",
+      "value": "No"
+    },
+    {
+      "trait_type": "Moons",
+      "value": "None"
+    },
+    {
+      "trait_type": "Secondary Suns",
+      "value": "None"
+    },
+    {
+      "trait_type": "Comet",
+      "value": "No"
+    },
+    {
+      "trait_type": "UFO",
+      "value": "No"
+    }
+  ]
+}
