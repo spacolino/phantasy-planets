@@ -12,6 +12,9 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   }
 });
 
+// Task to update template json metadata
+// Currently updates image and external URIs
+// TO-DO: source and destination folders
 task("updateMetadata", "Updates metadata with actual data")
   .addParam("count", "Files count")
   .addParam("imageuri", "Images Ipfs CID")

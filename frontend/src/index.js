@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 // import ReactDOM from 'react-dom';
-import {createRoot} from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import { MoralisProvider } from "react-moralis";
 
 const serverURL = "https://ynedv7rj3iqe.usemoralis.com:2053/server";
 const appID = "EPIKNAig8TBAoOU87gJzJl95lRlx7OW3qaNgkVdm";
 
-const container = document.getElementById('root');
+const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
