@@ -6,13 +6,12 @@ import Moralis from "moralis";
 import { contractABI, contractAddress } from "./contract/contract";
 import { ethers } from "ethers";
 import "./App.css";
-import useSticky from './hooks/useSticky.js'
-import MainMint from './MainMint';
-import NavBar from './NavBar';
+import Mint from "./Mint";
+import Navbar from "./Navbar";
+import About from "./About";
+import Future from "./Future";
 
 function App() {
-
-  const {isSticky ,element} = useSticky();
   const [accounts, setAccounts] = useState([]);
 
   let web3provider;
@@ -47,45 +46,44 @@ function App() {
     // }
   };
 
-  const logOut = async () => {
-    await logout();
-    console.log("logged out");
-  };
+  // const logOut = async () => {
+  //   await logout();
+  //   console.log("logged out");
+  // };
 
-  const mint = async () => {
-    try {
-      let lib = Moralis.web3Library;
-      const prov = new lib.providers.Web3Provider(Moralis.provider);
-      const signer = prov.getSigner();
-      const web3 = new lib.Contract(contractAddress, contractABI, signer);
-      const _contract = await web3.mint(3, {
-        value: ethers.utils.parseEther("0.0003"),
-      });
-      await _contract.wait();
+  // const mint = async () => {
+  //   try {
+  //     let lib = Moralis.web3Library;
+  //     const prov = new lib.providers.Web3Provider(Moralis.provider);
+  //     const signer = prov.getSigner();
+  //     const web3 = new lib.Contract(contractAddress, contractABI, signer);
+  //     const _contract = await web3.mint(3, {
+  //       value: ethers.utils.parseEther("0.0003"),
+  //     });
+  //     await _contract.wait();
 
-      alert(
-        `3 NFTs successfully minted. Contract address - ${contractAddress}`
-      );
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  //     alert(
+  //       `3 NFTs successfully minted. Contract address - ${contractAddress}`
+  //     );
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
   return (
-    <div>
-      <div className="App">
-        <NavBar sticky={isSticky} accounts={accounts} setAccounts={setAccounts} />
-        <MainMint accounts={accounts} setAccounts={setAccounts} />
-        {/* <div>
+    <div className="App">
+      <Navbar accounts={accounts} setAccounts={setAccounts} />
+      <About />
+      {/* <Future /> */}
+      <Mint accounts={accounts} setAccounts={setAccounts} />
+      {/* <div>
           <button onClick={login}>Connect Wallet</button>
           <button onClick={logOut} disabled={isAuthenticating}>
             Disconnect
           </button>
           <button onClick={mint}>Mint</button>
         </div> */}
-      </div>
-      {/* <div className="moving-background"></div> */}
-     </div>
+    </div>
   );
 }
 
