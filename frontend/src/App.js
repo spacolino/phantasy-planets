@@ -5,8 +5,14 @@ import { useEffect, useState } from "react";
 import Moralis from "moralis";
 import { contractABI, contractAddress } from "./contract/contract";
 import { ethers } from "ethers";
+import "./App.css";
+import MainMint from './MainMint';
+import NavBar from './NavBar';
 
 function App() {
+
+  const [accounts, setAccounts] = useState([]);
+
   let web3provider;
   const Web3Api = useMoralisWeb3Api();
   const { authenticate, isAuthenticated, isAuthenticating, account, logout } =
@@ -64,15 +70,20 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div>
-        <button onClick={login}>Connect Wallet</button>
-        <button onClick={logOut} disabled={isAuthenticating}>
-          Disconnect
-        </button>
-        <button onClick={mint}>Mint</button>
+    <div>
+      <div className="App">
+        <NavBar accounts={accounts} setAccounts={setAccounts} />
+        <MainMint accounts={accounts} setAccounts={setAccounts} />
+        {/* <div>
+          <button onClick={login}>Connect Wallet</button>
+          <button onClick={logOut} disabled={isAuthenticating}>
+            Disconnect
+          </button>
+          <button onClick={mint}>Mint</button>
+        </div> */}
       </div>
-    </div>
+      {/* <div className="moving-background"></div> */}
+     </div>
   );
 }
 
