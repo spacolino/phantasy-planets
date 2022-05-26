@@ -1,9 +1,10 @@
 import React from 'react';
 import {Box, Button, Flex, Image, Link, Spacer} from '@chakra-ui/react';
+import './NavBar.css';
 import Twitter from "./assets/social-media-icons/twitter_32x32.png"
 import Email from "./assets/social-media-icons/email_32x32.png"
 
-export default function NavBar({accounts, setAccounts}) {
+export default function NavBar({sticky, accounts, setAccounts}) {
     const isConnected = Boolean(accounts[0]);
 
     async function connectAccount() {
@@ -16,7 +17,7 @@ export default function NavBar({accounts, setAccounts}) {
     }
 
     return (
-        <Flex justify="space-between" align="center" padding="30px">
+        <Flex className={sticky ? "navbar navbar-sticky" : "navbar"}>
             {/** Left Side */}
             <Flex justify="space-around" width="20%" padding="0 75px">
                 <Link href="https://twitter.com">

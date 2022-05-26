@@ -6,11 +6,13 @@ import Moralis from "moralis";
 import { contractABI, contractAddress } from "./contract/contract";
 import { ethers } from "ethers";
 import "./App.css";
+import useSticky from './hooks/useSticky.js'
 import MainMint from './MainMint';
 import NavBar from './NavBar';
 
 function App() {
 
+  const {isSticky ,element} = useSticky();
   const [accounts, setAccounts] = useState([]);
 
   let web3provider;
@@ -72,7 +74,7 @@ function App() {
   return (
     <div>
       <div className="App">
-        <NavBar accounts={accounts} setAccounts={setAccounts} />
+        <NavBar sticky={isSticky} accounts={accounts} setAccounts={setAccounts} />
         <MainMint accounts={accounts} setAccounts={setAccounts} />
         {/* <div>
           <button onClick={login}>Connect Wallet</button>
