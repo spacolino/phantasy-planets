@@ -1,0 +1,9 @@
+.team {
+  /* background-image: url('./assets/planets/planet_intro.png');     */
+  background-attachment: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  text-align: center;  
+}

@@ -10,6 +10,7 @@ import Mint from "./Mint";
 import Navbar from "./Navbar";
 import About from "./About";
 import Future from "./Future";
+import Team from "./Team";
 
 function App() {
   const [accounts, setAccounts] = useState([]);
@@ -76,6 +77,7 @@ function App() {
       <About />
       <Future />
       <Mint accounts={accounts} setAccounts={setAccounts} />
+      <Team />
       {/* <div>
           <button onClick={login}>Connect Wallet</button>
           <button onClick={logOut} disabled={isAuthenticating}>

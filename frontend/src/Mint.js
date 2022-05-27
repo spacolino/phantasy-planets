@@ -31,7 +31,7 @@ export default function MainMint({ accounts, setAccounts }) {
           <Text fontSize="42px" textShadow="0 5px #000000">
             Mint
           </Text>
-          <Text
+          {/* <Text
             fontSize="30px"
             letterSpacing="-5.5%"
             fontFamily="VT323"
@@ -39,7 +39,7 @@ export default function MainMint({ accounts, setAccounts }) {
           >
             PhantasyPlanets will be limited to just 1000 and forever have
             priority and exclusivity over future features.
-          </Text>
+          </Text> */}
         </div>
         {isConnected ? (
           <div>
