@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Button, Flex, Image, Link, Spacer } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Spacer } from "@chakra-ui/react";
+import { Link } from "react-scroll";
 import Twitter from "./assets/social-media-icons/twitter_32x32.png";
 import Discord from "./assets/social-media-icons/discord_32x32.png";
 import "./Navbar.css";
@@ -35,7 +36,15 @@ export default function Navbar({ accounts, setAccounts }) {
         </Box>
         <Spacer />
         <Box margin="0 15px">
-          <Link>Mint</Link>
+          <Link to="future" smooth={true} spy={true} duration={500}>
+            Future
+          </Link>
+        </Box>
+        <Spacer />
+        <Box margin="0 15px">
+          <Link to="mint" smooth={true} spy={true} duration={500}>
+            Mint
+          </Link>
         </Box>
         <Spacer />
         <Box margin="0 15px">

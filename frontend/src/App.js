@@ -74,7 +74,7 @@ function App() {
     <div className="App">
       <Navbar accounts={accounts} setAccounts={setAccounts} />
       <About />
-      {/* <Future /> */}
+      <Future />
       <Mint accounts={accounts} setAccounts={setAccounts} />
       {/* <div>
           <button onClick={login}>Connect Wallet</button>
