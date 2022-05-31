@@ -21,34 +21,71 @@ export default function Navbar({ accounts, setAccounts }) {
     <Flex className="navbar">
       {/** Left Side */}
       <Flex justify="space-around" width="20%" padding="0 90px">
-        <Link href="https://twitter.com">
+        {/* <Link href="https://twitter.com">
           <Image src={Twitter} boxSize="38px" margin="0 5px" />
         </Link>
         <Link href="https://twitter.com">
           <Image src={Discord} boxSize="38px" margin="0 5px" />
+        </Link> */}
+        <Link to="about" smooth="true" offset={-150} duration={500}>
+          PHANTASY PLANETS
         </Link>
       </Flex>
 
       {/** Right Side */}
-      <Flex justify="space-around" align="center" width="40%" padding="40px">
-        <Box margin="0 15px">
-          <Link activeClass='active' to="about" smooth={true} spy={true} duration={500} offset={-150}>About</Link>
+      <Flex justify="space-around" align="center" width="40%">
+        <Box margin="0 10px" className="nav-item-box">
+          <Link
+            className="nav-item"
+            activeClass="active"
+            to="about"
+            smooth={true}
+            spy={true}
+            duration={500}
+            offset={-150}
+          >
+            About
+          </Link>
         </Box>
         <Spacer />
-        <Box margin="0 15px">
-          <Link activeClass='active' to="future" smooth={true} spy={true} duration={500}  offset={-150}>
+        <Box margin="0 10px" className="nav-item-box">
+          <Link
+            className="nav-item"
+            activeClass="active"
+            to="future"
+            smooth={true}
+            spy={true}
+            duration={500}
+            offset={-150}
+          >
             Future
           </Link>
         </Box>
         <Spacer />
-        <Box margin="0 15px">
-          <Link activeClass='active' to="mint" smooth={true} spy={true} duration={500}  offset={-150}>
+        <Box margin="0 10px" className="nav-item-box">
+          <Link
+            className="nav-item"
+            activeClass="active"
+            to="mint"
+            smooth={true}
+            spy={true}
+            duration={500}
+            offset={-150}
+          >
             Mint
           </Link>
         </Box>
         <Spacer />
-        <Box margin="0 15px">
-          <Link activeClass='active' to="team" smooth={true} spy={true} duration={500}  offset={-150}>
+        <Box margin="0 10px" className="nav-item-box">
+          <Link
+            className="nav-item"
+            activeClass="active"
+            to="team"
+            smooth={true}
+            spy={true}
+            duration={500}
+            offset={-150}
+          >
             Team
           </Link>
         </Box>
@@ -56,24 +93,23 @@ export default function Navbar({ accounts, setAccounts }) {
 
         {/** Connect */}
         {isConnected ? (
-          <Box margin="0 15px">Connected</Box>
+          <Box margin="0 10px">Connected</Box>
         ) : (
-          <Button
-            // backgroundColor="#D6517D"
-            backgroundColor={"7f7f7f"}
-            borderRadius="5px"
-            boxShadow="0px 2px 2px 1px #0F0F0F"
-            color="white"
-            cursor="pointer"
-            fontFamily="inherit"
-            padding="15px"
-            margin="0 15px"
-            opacity="0.6"
-            disabled
-            // onClick={connectAccount}
-          >
-            Wen Chain?
-          </Button>
+          <Box margin="0 10px">
+            <Button
+              backgroundColor="#D6517D"
+              borderRadius="5px"
+              boxShadow="0px 2px 2px 1px #0F0F0F"
+              color="white"
+              cursor="pointer"
+              fontFamily="inherit"
+              padding="15px"
+              margin="0 10px"
+              // onClick={connectAccount}
+            >
+              Connect
+            </Button>
+          </Box>
         )}
       </Flex>
     </Flex>

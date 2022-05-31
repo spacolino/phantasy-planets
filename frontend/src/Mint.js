@@ -18,15 +18,8 @@ export default function MainMint({ accounts, setAccounts }) {
   };
 
   return (
-    <Flex
-      justify="center"
-      align="center"
-      height="100v"
-      paddingBottom="150px"
-      scrollBehavior="auto"
-      paddingTop="200px"
-    >
-      <Box width="520px" id="mint">
+    <Flex justify="center" align="center" paddingTop="150px">
+      <Box width="40%" id="mint">
         <div>
           <Text fontSize="42px" textShadow="0 5px #000000">
             Mint
