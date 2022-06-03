@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Button, Flex, Image, Spacer } from "@chakra-ui/react";
 import { Link } from "react-scroll";
 import Twitter from "./assets/social-media-icons/twitter_32x32.png";
@@ -7,6 +7,18 @@ import "./Navbar.css";
 
 export default function Navbar({ accounts, setAccounts }) {
   const isConnected = Boolean(accounts[0]);
+
+  const [color, setColor] = useState(false);
+
+  const changeColor = () => {
+    if (window.scrollY >= 90) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeColor);
 
   async function connectAccount() {
     if (window.ethereum) {
@@ -18,7 +30,8 @@ export default function Navbar({ accounts, setAccounts }) {
   }
 
   return (
-    <Flex className="navbar">
+    // <Flex className="navbar">
+    <Flex className={color ? "navbar navbar-bg" : "navbar"}>
       {/** Left Side */}
       <Flex justify="space-around" width="20%" padding="0 90px">
         {/* <Link href="https://twitter.com">
