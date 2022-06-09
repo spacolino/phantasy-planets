@@ -3,7 +3,7 @@ import { useMoralis, useMoralisWeb3ApiCall } from "react-moralis";
 import { useMoralisWeb3Api } from "react-moralis";
 import Moralis from "moralis";
 
-import { Box, Button, Flex, Image, Spacer } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Spacer, Text } from "@chakra-ui/react";
 // import { Link } from "react-scroll";
 import { Link } from "react-router-dom";
 // import Twitter from "./assets/social-media-icons/twitter_32x32.png";
@@ -63,8 +63,10 @@ export default function Navbar({
         <Link href="https://twitter.com">
           <Image src={Discord} boxSize="38px" margin="0 5px" />
         </Link> */}
-        <Link to="about" smooth="true" offset={-150} duration={500}>
-          PHANTASY PLANETS
+        <Link to="/about">
+        <Text fontSize="18px" textShadow="0 2px #717171" textDecoration="none" textColor={"#ff5100"}>
+            PHANTASY PLANETS
+          </Text>          
         </Link>
       </Flex>
 
@@ -72,13 +74,8 @@ export default function Navbar({
       <Flex justify="space-around" align="center" width="40%">
         <Box margin="0 10px" className="nav-item-box">
           <Link
-            className="nav-item"
-            activeClass="active"
-            to="about"
-            smooth={true}
-            spy={true}
-            duration={500}
-            offset={-150}
+            className="nav-item"            
+            to="/about"            
           >
             About
           </Link>
@@ -86,13 +83,8 @@ export default function Navbar({
         <Spacer />
         <Box margin="0 10px" className="nav-item-box">
           <Link
-            className="nav-item"
-            activeClass="active"
-            to="future"
-            smooth={true}
-            spy={true}
-            duration={500}
-            offset={-150}
+            className="nav-item"            
+            to="/future"            
           >
             Future
           </Link>
@@ -100,13 +92,8 @@ export default function Navbar({
         <Spacer />
         <Box margin="0 10px" className="nav-item-box">
           <Link
-            className="nav-item"
-            activeClass="active"
-            to="mint"
-            smooth={true}
-            spy={true}
-            duration={500}
-            offset={-150}
+            className="nav-item"            
+            to="/mint"            
           >
             Mint
           </Link>
@@ -114,13 +101,8 @@ export default function Navbar({
         <Spacer />
         <Box margin="0 10px" className="nav-item-box">
           <Link
-            className="nav-item"
-            activeClass="active"
-            to="team"
-            smooth={true}
-            spy={true}
-            duration={500}
-            offset={-150}
+            className="nav-item"            
+            to="team"            
           >
             Team
           </Link>

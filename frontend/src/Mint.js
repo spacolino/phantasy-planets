@@ -41,7 +41,7 @@ export default function Mint({ isConnected }) {
 
   return (
     <Flex justify="center" align="center" paddingTop="150px">
-      <Box width="40%" id="mint">
+      <Box width="800px" id="mint">
         <div>
           <Text fontSize="42px" textShadow="0 5px #000000">
             Mint

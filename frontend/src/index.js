@@ -1,10 +1,14 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { MoralisProvider } from "react-moralis";
+import About from "./About";
+import Future from "./Future";
+import Mint from "./Mint";
+import Team from "./Team";
 
 const serverURL = "https://8y3xnklzww8m.usemoralis.com:2053/server";
 const appID = "dEKrdW2zhrFqvyg8sKslIGB3OP1yVxYlMCdhgrWf";
@@ -16,7 +20,15 @@ root.render(
   <React.StrictMode>
     <MoralisProvider serverUrl={serverURL} appId={appID}>
       <BrowserRouter>
-        <App />
+        <Routes>
+          <Route path="/*" element={<App />}>            
+            <Route index element={<About />} />
+            <Route path="about" element={<About/>} />
+            <Route path="future" element={<Future/>} />
+            <Route path="mint" element={<Mint/>} />
+            <Route path="team" element={<Team/>} />            
+          </Route>
+        </Routes>
       </BrowserRouter>
     </MoralisProvider>
   </React.StrictMode>

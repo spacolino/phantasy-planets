@@ -4,12 +4,12 @@ import "./About.css";
 function About() {
   return (
     <Flex justify="center" align="start" paddingTop="150px" className="about">
-      <Box width="40%" id="about">
+      <Box width="800px" id="about">
         <div>
-          <Text fontSize="42px" textShadow="0 4px #717171">
+          <Text fontSize="42px" textShadow="0 4px #FF9868" textColor={"#ff5100"}>
             PHANTASY PLANETS
           </Text>
-          <Image src="/planet_intro.png" />
+          {/* <Image src="/planet_intro.png" /> */}
           <Text
             fontSize="26px"
             letterSpacing="-5.5%"
@@ -65,16 +65,16 @@ function About() {
             A couple of examples:
           </Text>
           <SimpleGrid columns={2} spacing={50}>
-            <Box>
+            <Box borderWidth={"10px"} borderColor="gray" borderStyle={"solid"}>
               <Image src="/planet_1.png" />
             </Box>
-            <Box>
+            <Box borderWidth={"10px"} borderColor="gray" borderStyle={"solid"}>
               <Image src="/planet_2.png" />
             </Box>
-            <Box>
+            <Box borderWidth={"10px"} borderColor="gray" borderStyle={"solid"}>
               <Image src="/planet_3.png" />
             </Box>
-            <Box>
+            <Box borderWidth={"10px"} borderColor="gray" borderStyle={"solid"}>
               <Image src="/planet_4.png" />
             </Box>
           </SimpleGrid>

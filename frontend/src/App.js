@@ -12,6 +12,7 @@ import About from "./About";
 import Future from "./Future";
 import Team from "./Team";
 import Footer from "./Footer";
+import { Outlet } from "react-router-dom";
 
 function App() {
   var isConnected = false;
@@ -80,10 +81,11 @@ function App() {
         account={account}
         isConnected={isConnected}
       />
-      <About />
+      {/* <About />
       <Future />
       <Mint isConnected={isConnected} />
-      <Team />
+      <Team /> */}
+      <Outlet />
       <Footer />
       {/* <div>
           <button onClick={login}>Connect Wallet</button>
