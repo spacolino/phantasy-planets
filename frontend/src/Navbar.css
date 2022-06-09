@@ -19,15 +19,17 @@
   
   .active {
     padding-bottom: 12px;
-    border-bottom: 3px solid #b86184;
+    border-bottom: 3px solid #ff5100;
   }
 
   .nav-item {
+    color: #ffffff; 
+    text-decoration: none;   
     cursor: pointer; 
   }
 
   .nav-item:hover {
-    color:#b86184;
+    color:#ff5100;
   }
 
   /* ******** navbar logo ******** */
