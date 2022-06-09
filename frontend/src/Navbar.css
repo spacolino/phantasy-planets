@@ -5,40 +5,41 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
+  height: 90px;
   padding: 0 2rem;
-  /* background: rgba(30, 30, 30, 0.90); */
+  background: rgba(0, 0, 0, .5);
   z-index: 2;
   font-size: 14px;
-  transition: .5s ease-in;
+  transition: .4s ease-in;
   }
 
   .navbar-bg {    
-    border-bottom: 3px solid #FFFFFF;
-    color: #000000;
-    background: rgba(214, 81, 125, 0.90);
+    background: rgba(26, 26, 26, .9);
   }
   
   .active {
     padding-bottom: 12px;
-    border-bottom: 3px solid #D6517D;
+    border-bottom: 3px solid #b86184;
   }
 
   .nav-item {
     cursor: pointer; 
-    /* padding-bottom: 10px; */
   }
 
   .nav-item:hover {
-    color:#D6517D;
-    /* padding-bottom: 10px; */
-    /* border-bottom: 3px solid #D6517D; */
+    color:#b86184;
   }
 
-  /* .nav-item-box:hover {
-    color:#D6517D;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #D6517D;
-  } */
+  /* ******** navbar logo ******** */
+
+  .navbar-logo {    
+    color: #ff86a6;    
+    transition: 0.4s ease-in;
+  }
+
+  .navbar-logo-active {    
+    transition: 0.4s ease-in;
+  }
+
 
   

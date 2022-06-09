@@ -1,31 +1,49 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useMoralis, useMoralisWeb3ApiCall } from "react-moralis";
+import { useMoralisWeb3Api } from "react-moralis";
+import Moralis from "moralis";
+
 import { Box, Button, Flex, Image, Spacer } from "@chakra-ui/react";
-import { Link } from "react-scroll";
-import Twitter from "./assets/social-media-icons/twitter_32x32.png";
-import Discord from "./assets/social-media-icons/discord_32x32.png";
+// import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
+// import Twitter from "./assets/social-media-icons/twitter_32x32.png";
+// import Discord from "./assets/social-media-icons/discord_32x32.png";
 import "./Navbar.css";
 
-export default function Navbar({ accounts, setAccounts }) {
-  const isConnected = Boolean(accounts[0]);
+export default function Navbar({
+  authenticate,
+  isAuthenticated,
+  account,
+  isConnected,
+}) {
+  var address = "";
 
   const [color, setColor] = useState(false);
 
   const changeColor = () => {
-    if (window.scrollY >= 90) {
+    if (window.scrollY >= 120) {
       setColor(true);
     } else {
       setColor(false);
     }
   };
 
-  window.addEventListener("scroll", changeColor);
+  useEffect(() => {
+    changeColor();
+    window.addEventListener("scroll", changeColor);
+  });
 
   async function connectAccount() {
-    if (window.ethereum) {
-      const accounts = await window.ethereum.request({
-        method: "eth_request_Accounts",
-      });
-      setAccounts(accounts);
+    if (!isAuthenticated || !account) {
+      await authenticate({ signingMessage: "Phantasy Planets" })
+        .then(function (user) {
+          console.log(user.get("ethAddress"));
+          isConnected = true;
+          // web3provider = Moralis.enableWeb3();
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     }
   }
 
@@ -33,7 +51,12 @@ export default function Navbar({ accounts, setAccounts }) {
     // <Flex className="navbar">
     <Flex className={color ? "navbar navbar-bg" : "navbar"}>
       {/** Left Side */}
-      <Flex justify="space-around" width="20%" padding="0 90px">
+      <Flex
+        className={color ? "navbar-logo-active" : "navbar-logo"}
+        justify="space-around"
+        width="20%"
+        padding="0 90px"
+      >
         {/* <Link href="https://twitter.com">
           <Image src={Twitter} boxSize="38px" margin="0 5px" />
         </Link>
@@ -110,7 +133,7 @@ export default function Navbar({ accounts, setAccounts }) {
         ) : (
           <Box margin="0 10px">
             <Button
-              backgroundColor="#D6517D"
+              backgroundColor="#b86184"
               borderRadius="5px"
               boxShadow="0px 2px 2px 1px #0F0F0F"
               color="white"

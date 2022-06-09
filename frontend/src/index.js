@@ -1,13 +1,13 @@
 import React from "react";
-// import ReactDOM from 'react-dom';
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { MoralisProvider } from "react-moralis";
 
-const serverURL = "https://ynedv7rj3iqe.usemoralis.com:2053/server";
-const appID = "EPIKNAig8TBAoOU87gJzJl95lRlx7OW3qaNgkVdm";
+const serverURL = "https://8y3xnklzww8m.usemoralis.com:2053/server";
+const appID = "dEKrdW2zhrFqvyg8sKslIGB3OP1yVxYlMCdhgrWf";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -15,7 +15,9 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <MoralisProvider serverUrl={serverURL} appId={appID}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </MoralisProvider>
   </React.StrictMode>
 );

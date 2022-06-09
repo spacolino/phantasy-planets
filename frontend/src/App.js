@@ -1,10 +1,10 @@
 // import * as React from "react";
-import { useMoralis, useMoralisWeb3ApiCall } from "react-moralis";
+import { useMoralis /*, useMoralisWeb3ApiCall*/ } from "react-moralis";
 import { useMoralisWeb3Api } from "react-moralis";
 import { useEffect, useState } from "react";
-import Moralis from "moralis";
-import { contractABI, contractAddress } from "./contract/contract";
-import { ethers } from "ethers";
+// import Moralis from "moralis";
+// import { contractABI, contractAddress } from "./contract/contract";
+// import { ethers } from "ethers";
 import "./App.css";
 import Mint from "./Mint";
 import Navbar from "./Navbar";
@@ -14,10 +14,10 @@ import Team from "./Team";
 import Footer from "./Footer";
 
 function App() {
-  const [accounts, setAccounts] = useState([]);
+  var isConnected = false;
 
   let web3provider;
-  const Web3Api = useMoralisWeb3Api();
+  // const Web3Api = useMoralisWeb3Api();
   const { authenticate, isAuthenticated, isAuthenticating, account, logout } =
     useMoralis();
 
@@ -27,31 +27,31 @@ function App() {
     }
   }, [isAuthenticated]);
 
-  const login = async () => {
-    if (!isAuthenticated || !account) {
-      await authenticate({ signingMessage: "Phantasy Planets" })
-        .then(function (user) {
-          console.log(user.get("ethAddress"));
-          web3provider = Moralis.enableWeb3();
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
-    // } else {
-    //   const options = {
-    //     address: "0x2cb4F25E9b4218920bFe8D39251269a0b96dE3b8",
-    //   };
-    //   const NFTs = Web3Api.account.getNFTs(options).then(function (nfts) {
-    //     console.log(nfts);
-    //   });
-    // }
-  };
-
-  // const logOut = async () => {
-  //   await logout();
-  //   console.log("logged out");
+  // const login = async () => {
+  //   if (!isAuthenticated || !account) {
+  //     await authenticate({ signingMessage: "Phantasy Planets" })
+  //       .then(function (user) {
+  //         console.log(user.get("ethAddress"));
+  //         web3provider = Moralis.enableWeb3();
+  //       })
+  //       .catch(function (error) {
+  //         console.log(error);
+  //       });
+  //   }
+  // } else {
+  //   const options = {
+  //     address: "0x2cb4F25E9b4218920bFe8D39251269a0b96dE3b8",
+  //   };
+  //   const NFTs = Web3Api.account.getNFTs(options).then(function (nfts) {
+  //     console.log(nfts);
+  //   });
+  // }
   // };
+
+  const logOut = async () => {
+    await logout();
+    console.log("logged out");
+  };
 
   // const mint = async () => {
   //   try {
@@ -74,10 +74,15 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar accounts={accounts} setAccounts={setAccounts} />
+      <Navbar
+        authenticate={authenticate}
+        isAuthenticated={isAuthenticated}
+        account={account}
+        isConnected={isConnected}
+      />
       <About />
       <Future />
-      <Mint accounts={accounts} setAccounts={setAccounts} />
+      <Mint isConnected={isConnected} />
       <Team />
       <Footer />
       {/* <div>

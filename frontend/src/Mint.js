@@ -1,11 +1,33 @@
 import { useState } from "react";
 import { Box, Button, Flex, Input, Text } from "@chakra-ui/react";
+import { useMoralis, useMoralisWeb3ApiCall } from "react-moralis";
+import { useMoralisWeb3Api } from "react-moralis";
 
-export default function MainMint({ accounts, setAccounts }) {
+import Moralis from "moralis";
+import { contractABI, contractAddress } from "./contract/contract";
+import { ethers } from "ethers";
+
+export default function Mint({ isConnected }) {
   const [mintAmount, setMintAmount] = useState(1);
-  const isConnected = Boolean(accounts[0]);
 
-  async function handleMint() {}
+  async function handleMint() {
+    try {
+      let lib = Moralis.web3Library;
+      const prov = new lib.providers.Web3Provider(Moralis.provider);
+      const signer = prov.getSigner();
+      const web3 = new lib.Contract(contractAddress, contractABI, signer);
+      const _contract = await web3.mint(3, {
+        value: ethers.utils.parseEther("0.0003"),
+      });
+      await _contract.wait();
+
+      alert(
+        `3 NFTs successfully minted. Contract address - ${contractAddress}`
+      );
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   const handleIncrement = () => {
     if (mintAmount >= 3) return;
@@ -24,7 +46,7 @@ export default function MainMint({ accounts, setAccounts }) {
           <Text fontSize="42px" textShadow="0 5px #000000">
             Mint
           </Text>
-          {/* <Text
+          <Text
             fontSize="30px"
             letterSpacing="-5.5%"
             fontFamily="VT323"
@@ -32,13 +54,13 @@ export default function MainMint({ accounts, setAccounts }) {
           >
             PhantasyPlanets will be limited to just 1000 and forever have
             priority and exclusivity over future features.
-          </Text> */}
+          </Text>
         </div>
         {isConnected ? (
           <div>
             <Flex align="center" justify="center">
               <Button
-                backgroundColor="#D6517D"
+                backgroundColor="#b86184"
                 borderRadius="5px"
                 boxShadow="0px 2px 2px 1px #0F0F0F"
                 color="white"
@@ -62,7 +84,7 @@ export default function MainMint({ accounts, setAccounts }) {
                 value={mintAmount}
               />
               <Button
-                backgroundColor="#D6517D"
+                backgroundColor="#b86184"
                 borderRadius="5px"
                 boxShadow="0px 2px 2px 1px #0F0F0F"
                 color="white"
@@ -76,7 +98,7 @@ export default function MainMint({ accounts, setAccounts }) {
               </Button>
             </Flex>
             <Button
-              backgroundColor="#D6517D"
+              backgroundColor="#b86184"
               borderRadius="5px"
               boxShadow="0px 2px 2px 1px #0F0F0F"
               color="white"
@@ -84,7 +106,7 @@ export default function MainMint({ accounts, setAccounts }) {
               fontFamily="inherit"
               padding="15px"
               marginTop="10px"
-              //   onClick={handleMint}
+              onClick={handleMint}
             >
               Mint
             </Button>
