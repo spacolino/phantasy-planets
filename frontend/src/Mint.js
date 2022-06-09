@@ -6,6 +6,7 @@ import { useMoralisWeb3Api } from "react-moralis";
 import Moralis from "moralis";
 import { contractABI, contractAddress } from "./contract/contract";
 import { ethers } from "ethers";
+import "./Global.css";
 
 export default function Mint({ isConnected }) {
   const [mintAmount, setMintAmount] = useState(1);
@@ -43,9 +44,7 @@ export default function Mint({ isConnected }) {
     <Flex justify="center" align="center" paddingTop="150px">
       <Box width="800px" id="mint">
         <div>
-          <Text fontSize="42px" textShadow="0 5px #000000">
-            Mint
-          </Text>
+          <Text className="categoryTitle">Mint</Text>
           <Text
             fontSize="30px"
             letterSpacing="-5.5%"
@@ -118,10 +117,10 @@ export default function Mint({ isConnected }) {
             letterSpacing="-5.5%"
             fontFamily="VT323"
             textShadow="0 3px #000000"
-            color="#D6517D"
+            color="#c36363"
           >
             {/* You must connect to Mint */}
-            Coming in Autumn 2022
+            Coming this year
           </Text>
         )}
       </Box>

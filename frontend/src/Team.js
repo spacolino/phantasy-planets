@@ -1,12 +1,13 @@
 import { Box, Flex, SimpleGrid, Text, Spacer } from "@chakra-ui/react";
 import "./Team.css";
+import "./Global.css";
 
 function Team() {
   return (
     <Flex justify="center" align="start" paddingTop="150px" className="team">
       <Box width="800px" id="team">
         <div>
-          <Text fontSize="42px" textShadow="0 4px #717171" paddingBottom={40}>
+          <Text className="categoryTitle" paddingBottom={40}>
             TEAM
           </Text>
           <SimpleGrid columns={2} spacing={40}>

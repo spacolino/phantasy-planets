@@ -1,14 +1,13 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import "./Future.css";
+import "./Global.css";
 
 function Future() {
   return (
     <Flex justify="center" align="center" paddingTop="150px" className="future">
-      <Box width="40%" id="future">
+      <Box width="800px" id="future">
         <div>
-          <Text fontSize="42px" textShadow="0 5px #717171">
-            FUTURE
-          </Text>
+          <Text className="categoryTitle">FUTURE</Text>
           <Text
             fontSize="26px"
             letterSpacing="-5.5%"

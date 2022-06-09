@@ -8,6 +8,7 @@ import { Box, Button, Flex, Image, Spacer, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 // import Twitter from "./assets/social-media-icons/twitter_32x32.png";
 // import Discord from "./assets/social-media-icons/discord_32x32.png";
+import Logo from "./assets/planets/lonely-planet.png";
 import "./Navbar.css";
 
 export default function Navbar({
@@ -64,46 +65,41 @@ export default function Navbar({
           <Image src={Discord} boxSize="38px" margin="0 5px" />
         </Link> */}
         <Link to="/about">
-        <Text fontSize="18px" textShadow="0 2px #717171" textDecoration="none" textColor={"#ff5100"}>
+          {/* <Text
+            fontSize="18px"
+            textShadow="0 2px #717171"
+            textDecoration="none"
+            textColor={"#ff5100"}
+          >
             PHANTASY PLANETS
-          </Text>          
+          </Text> */}
+          {/* <Image src={Logo} height="74px" margin={"0 5px"} /> */}
+          <Image className={color ? "navbar-logo-active" : "navbar-logo"} />
         </Link>
       </Flex>
 
       {/** Right Side */}
-      <Flex justify="space-around" align="center" width="40%">
-        <Box margin="0 10px" className="nav-item-box">
-          <Link
-            className="nav-item"            
-            to="/about"            
-          >
+      <Flex justify="space-around" align="center" width="750px">
+        <Box margin="0 10px">
+          <Link className="nav-item" to="/about">
             About
           </Link>
         </Box>
         <Spacer />
-        <Box margin="0 10px" className="nav-item-box">
-          <Link
-            className="nav-item"            
-            to="/future"            
-          >
+        <Box margin="0 10px">
+          <Link className="nav-item" to="/future">
             Future
           </Link>
         </Box>
         <Spacer />
-        <Box margin="0 10px" className="nav-item-box">
-          <Link
-            className="nav-item"            
-            to="/mint"            
-          >
+        <Box margin="0 10px">
+          <Link className="nav-item" to="/mint">
             Mint
           </Link>
         </Box>
         <Spacer />
-        <Box margin="0 10px" className="nav-item-box">
-          <Link
-            className="nav-item"            
-            to="team"            
-          >
+        <Box margin="0 10px">
+          <Link className="nav-item" to="team">
             Team
           </Link>
         </Box>
@@ -115,7 +111,7 @@ export default function Navbar({
         ) : (
           <Box margin="0 10px">
             <Button
-              backgroundColor="#b86184"
+              backgroundColor="#c36363"
               borderRadius="5px"
               boxShadow="0px 2px 2px 1px #0F0F0F"
               color="white"

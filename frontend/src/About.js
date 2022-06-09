@@ -1,4 +1,5 @@
 import { Box, Flex, Text, SimpleGrid, Image, Badge } from "@chakra-ui/react";
+import "./Global.css";
 import "./About.css";
 
 function About() {
@@ -6,9 +7,7 @@ function About() {
     <Flex justify="center" align="start" paddingTop="150px" className="about">
       <Box width="800px" id="about">
         <div>
-          <Text fontSize="42px" textShadow="0 4px #FF9868" textColor={"#ff5100"}>
-            PHANTASY PLANETS
-          </Text>
+          <Text className="categoryTitle">PHANTASY PLANETS</Text>
           {/* <Image src="/planet_intro.png" /> */}
           <Text
             fontSize="26px"
@@ -64,7 +63,7 @@ function About() {
           >
             A couple of examples:
           </Text>
-          <SimpleGrid columns={2} spacing={50}>
+          <SimpleGrid columns={2} spacing={40}>
             <Box borderWidth={"10px"} borderColor="gray" borderStyle={"solid"}>
               <Image src="/planet_1.png" />
             </Box>
