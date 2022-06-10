@@ -4,15 +4,11 @@ import "./Global.css";
 
 function Future() {
   return (
-    <Flex justify="center" align="center" paddingTop="150px" className="future">
+    <Flex justify="center" align="center" paddingTop="150px" className="category-content">
       <Box width="800px" id="future">
         <div>
-          <Text className="categoryTitle">FUTURE</Text>
-          <Text
-            fontSize="26px"
-            letterSpacing="-5.5%"
-            fontFamily="VT323"
-            textShadow="0 2px 2px #000000"
+          <Text className="category-title">FUTURE</Text>
+          <Text className="category-text"
           >
             We are going to be competely transparent and tell you immediately
             that this is our first NFT project, so we are kinda newbies in this
@@ -22,11 +18,7 @@ function Future() {
             the purpose to get some experience, contacts in the NFT community
             and possibly some funding to get a couple more people on the team.
           </Text>
-          <Text
-            fontSize="26px"
-            letterSpacing="-5.5%"
-            fontFamily="VT323"
-            textShadow="0 2px 2px #000000"
+          <Text className="category-text"
           >
             After this, the plan is to focus our efforts on developing a
             minimalistic indie sci-fi archaeology and exploration game with ARPG

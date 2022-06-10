@@ -93,7 +93,7 @@ export default function Navbar({
         </Box>
         <Spacer />
         <Box margin="0 10px">
-          <Link className="nav-item" to="/mint">
+          <Link className="nav-item disabled-link" to="/mint">
             Mint
           </Link>
         </Box>

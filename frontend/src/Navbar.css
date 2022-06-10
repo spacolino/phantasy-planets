@@ -33,6 +33,11 @@
     text-shadow: 0px 1px #7f3045;    
   }
 
+  .disabled-link {
+    pointer-events: none;
+    color: #a8a8a8;
+  }
+
   /* ******** navbar logo ******** */
 
   .navbar-logo {    

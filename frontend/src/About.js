@@ -4,26 +4,18 @@ import "./About.css";
 
 function About() {
   return (
-    <Flex justify="center" align="start" paddingTop="150px" className="about">
+    <Flex justify="center" align="start" paddingTop="150px" className="category-content">
       <Box width="800px" id="about">
         <div>
-          <Text className="categoryTitle">PHANTASY PLANETS</Text>
+          <Text className="category-title">PHANTASY PLANETS</Text>
           {/* <Image src="/planet_intro.png" /> */}
-          <Text
-            fontSize="26px"
-            letterSpacing="-5.5%"
-            fontFamily="VT323"
-            textShadow="0 2px 2px #000000"
+          <Text className="category-text"           
           >
             Phantasy Planets is a NFT collection of completely random generated
             space scenes with randomly generated planets of various types as the
             main stars of the show.
           </Text>
-          <Text
-            fontSize="26px"
-            letterSpacing="-5.5%"
-            fontFamily="VT323"
-            textShadow="0 2px 2px #000000"
+          <Text className="category-text"
           >
             Since we currently don't have any proper artists on the team and
             having quite some experience with computer generated graphics, we
@@ -32,11 +24,7 @@ function About() {
             background starfield and nebulas of various shapes and colors, a
             Milky Way, moons, secondary suns, planet rings, comets etc.
           </Text>
-          <Text
-            fontSize="26px"
-            letterSpacing="-5.5%"
-            fontFamily="VT323"
-            textShadow="0 2px 2px #000000"
+          <Text className="category-text"
           >
             Each element has it's own rarity. The rarity of a complete scene is
             based on which elements are on in and their respective rarities.
@@ -46,34 +34,26 @@ function About() {
             unique planets). The art style of the scenes is a mix between
             stylized (exagerating some features) and realistic.
           </Text>
-          <Text
-            fontSize="26px"
-            letterSpacing="-5.5%"
-            fontFamily="VT323"
-            textShadow="0 2px 2px #000000"
+          <Text className="category-text"
           >
             Since everything is randomly generated, no two images are the same,
             even if they have the same elements.
           </Text>
-          <Text
-            fontSize="26px"
-            letterSpacing="-5.5%"
-            fontFamily="VT323"
-            textShadow="0 2px 2px #000000"
+          <Text className="category-text"
           >
             A couple of examples:
           </Text>
           <SimpleGrid columns={2} spacing={40}>
-            <Box borderWidth={"10px"} borderColor="gray" borderStyle={"solid"}>
+            <Box className="image-border">
               <Image src="/planet_1.png" />
             </Box>
-            <Box borderWidth={"10px"} borderColor="gray" borderStyle={"solid"}>
+            <Box className="image-border">
               <Image src="/planet_2.png" />
             </Box>
-            <Box borderWidth={"10px"} borderColor="gray" borderStyle={"solid"}>
+            <Box className="image-border">
               <Image src="/planet_3.png" />
             </Box>
-            <Box borderWidth={"10px"} borderColor="gray" borderStyle={"solid"}>
+            <Box className="image-border">
               <Image src="/planet_4.png" />
             </Box>
           </SimpleGrid>

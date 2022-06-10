@@ -7,6 +7,7 @@ import Moralis from "moralis";
 import { contractABI, contractAddress } from "./contract/contract";
 import { ethers } from "ethers";
 import "./Global.css";
+import "./Mint.css";
 
 export default function Mint({ isConnected }) {
   const [mintAmount, setMintAmount] = useState(1);
@@ -44,7 +45,7 @@ export default function Mint({ isConnected }) {
     <Flex justify="center" align="center" paddingTop="150px">
       <Box width="800px" id="mint">
         <div>
-          <Text className="categoryTitle">Mint</Text>
+          <Text className="category-title">Mint</Text>
           <Text
             fontSize="30px"
             letterSpacing="-5.5%"
