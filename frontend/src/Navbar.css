@@ -10,11 +10,12 @@
   background: rgba(0, 0, 0, .5);
   z-index: 2;
   font-size: 14px;
-  transition: .4s ease-in;
+  transition: .4s ease-in;    
   }
 
   .navbar-bg {    
-    background: rgba(26, 26, 26, .9);
+    background: rgba(26, 26, 26, .9);        
+    
   }
   
   .active {

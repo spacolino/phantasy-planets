@@ -8,8 +8,8 @@
 
 .category-title {
   font-size: 42px;  
-  text-shadow: 0px 4px #7f3045;
-  color: #c36363;
+  text-shadow: 0px 4px #333333;
+  color: #d8633f;
 }
 
 .category-text {
@@ -23,4 +23,5 @@
   border-color: #949494;
   border-width: 10px;
   border-style: solid;
+  border-radius: 10px;  
 }

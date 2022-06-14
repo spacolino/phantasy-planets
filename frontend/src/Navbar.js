@@ -94,7 +94,7 @@ export default function Navbar({
         <Spacer />
         <Box margin="0 10px">
           <Link className="nav-item disabled-link" to="/mint">
-            Mint
+            Mint            
           </Link>
         </Box>
         <Spacer />
@@ -111,7 +111,7 @@ export default function Navbar({
         ) : (
           <Box margin="0 10px">
             <Button
-              backgroundColor="#c36363"
+              backgroundColor="#d8633f"
               borderRadius="5px"
               boxShadow="0px 2px 2px 1px #0F0F0F"
               color="white"

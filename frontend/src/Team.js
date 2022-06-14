@@ -1,4 +1,4 @@
-import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Flex, SimpleGrid, Text, Spacer } from "@chakra-ui/react";
 import "./Team.css";
 import "./Global.css";
 
@@ -10,8 +10,8 @@ function Team() {
           <Text className="category-title" paddingBottom={40}>
             TEAM
           </Text>
-          <SimpleGrid columns={2} spacing={40}>
-            <Box>
+          {/* <SimpleGrid columns={2} spacing={40}> */}
+            <Box paddingTop={"20px"}>
               <Text fontSize="24px" textShadow="0 2px #717171">
                 GOOATH
               </Text>
@@ -25,8 +25,8 @@ function Team() {
                 projects in the past, admittedly none very successful, but
                 accumulated copious amount of experience doing it.
               </Text>
-            </Box>
-            <Box>
+            </Box>            
+            <Box paddingTop={"65px"}>
               <Text fontSize="24px" textShadow="0 2px #717171">
                 SPACE-O
               </Text>
@@ -36,7 +36,7 @@ function Team() {
                 guy on the project. (TO-DO)
               </Text>
             </Box>
-            <Box>
+            <Box paddingTop={"65px"}>
               <Text fontSize="24px" textShadow="0 2px #717171">
                 WANTED!
               </Text>
@@ -48,7 +48,7 @@ function Team() {
                 and interested in joining: [link]
               </Text>
             </Box>
-          </SimpleGrid>
+          {/* </SimpleGrid> */}
         </div>
       </Box>
     </Flex>
